@@ -1,0 +1,8 @@
+.name = "certifi"
+.version = "2024.02.02"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `certifi`"
+
+.dependencies = {=}
