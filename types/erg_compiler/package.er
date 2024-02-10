@@ -1,0 +1,8 @@
+.name = "erg_compiler"
+.version = "0.6.30"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `erg_compiler`"
+
+.dependencies = {=}
