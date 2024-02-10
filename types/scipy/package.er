@@ -1,0 +1,8 @@
+.name = "scipy"
+.version = "1.12.0"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `scipy`"
+
+.dependencies = {=}
