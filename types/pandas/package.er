@@ -1,0 +1,8 @@
+.name = "pandas"
+.version = "2.2.0"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `pandas`"
+
+.dependencies = {=}
