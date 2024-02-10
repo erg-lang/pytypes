@@ -1,0 +1,8 @@
+.name = "matplotlib"
+.version = "3.8.2"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `matplotlib`"
+
+.dependencies = {=}
