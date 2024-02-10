@@ -1,0 +1,8 @@
+.version = "1"
+.packages = [
+    {
+        .name = "certified/numpy";
+        .as_name = "numpy";
+        .version = "1.26.0";
+    },
+]

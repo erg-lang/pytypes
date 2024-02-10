@@ -1,0 +1,10 @@
+.name = "torch"
+.version = "2.3.0"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `torch`"
+
+.dependencies = {
+    numpy = "1.26.0";
+}
