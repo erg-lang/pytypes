@@ -1,0 +1,8 @@
+.name = "tqdm"
+.version = "4.66.1"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `tqdm`"
+
+.dependencies = {=}
