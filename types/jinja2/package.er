@@ -1,0 +1,8 @@
+.name = "jinja2"
+.version = "3.1.3"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `jinja2`"
+
+.dependencies = {=}
