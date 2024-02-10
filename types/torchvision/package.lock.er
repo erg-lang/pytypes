@@ -1,0 +1,13 @@
+.version = "1"
+.packages = [
+    {
+        .name = "certified/torch";
+        .as_name = "torch";
+        .version = "2.3.0";
+    },
+    {
+        .name = "certified/numpy";
+        .as_name = "numpy";
+        .version = "1.26.0";
+    },
+]

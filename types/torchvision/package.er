@@ -1,0 +1,10 @@
+.name = "torchvision"
+.version = "0.18.0"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for `torchvision`"
+
+.dependencies = {
+    torch = "2.3.0";
+}
