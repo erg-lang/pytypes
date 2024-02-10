@@ -1,0 +1,3 @@
+.command = pyimport "./command"
+
+.setup!: (*Obj,) => NoneType
