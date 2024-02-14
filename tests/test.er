@@ -1,20 +1,30 @@
 exception = import "exception"
 erg_compiler = pyimport "erg_compiler"
 
+deps = [
+    erg_compiler.Package("certified/erg_compiler", "erg_compiler", "0.6.31", None),
+    erg_compiler.Package("certified/jinja2", "jinja2", "3.1.3", None),
+    erg_compiler.Package("certified/numpy", "numpy", "1.26.0", None),
+    erg_compiler.Package("certified/torch", "torch", "2.3.0", None),
+    erg_compiler.Package("certified/torchvision", "torchvision", "0.18.0", None),
+    erg_compiler.Package("certified/tqdm", "tqdm", "4.66.1", None),
+    erg_compiler.Package("certified/matplotlib", "matplotlib", "3.8.2", None),
+]
+
 .test_dependent_refinemt_err!() =
-    num_errs = exception.try! do! erg_compiler.compile_file("tests/compile_err/dependent_refinement.er"), err =>
+    num_errs = exception.try! do! erg_compiler.compile_file_with_dependencies("tests/compile_err/dependent_refinement.er", deps), err =>
         nat str(err).split(" ")[0]
     assert num_errs in Nat
     assert num_errs == 3
 
 .test_dependent_refinemt!() =
-    discard erg_compiler.compile_file("tests/compile_ok/dependent_refinement.er")
+    discard erg_compiler.compile_file_with_dependencies("tests/compile_ok/dependent_refinement.er", deps)
 
 .test_external!() =
-    discard erg_compiler.__import__("tests/exec_ok/external")
+    discard erg_compiler.exec_file_with_dependencies("tests/exec_ok/external.er", deps)
 
 .test_pytorch!() =
-    discard erg_compiler.compile_file("tests/exec_ok/pytorch.er")
+    discard erg_compiler.compile_file_with_dependencies("tests/exec_ok/pytorch.er", deps)
 
 .test_use_compiler!() =
-    discard erg_compiler.__import__("tests/exec_ok/use_compiler")
+    discard erg_compiler.exec_file_with_dependencies("tests/exec_ok/use_compiler.er", deps)
