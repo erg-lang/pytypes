@@ -1,0 +1,22 @@
+time = pyimport "time"
+tqdm = pyimport "tqdm"
+j2 = pyimport "jinja2"
+np = pyimport "numpy"
+
+for! tqdm.tqdm(0..<10), _ =>
+    time.sleep! 0.01
+for! tqdm.tqdm(0..<10), _ =>
+    time.sleep! 0.01
+
+plt = pyimport "matplotlib/pyplot"
+
+discard plt.plot! 0..<10, [2, 3, 2, 3, 2, 3, 2, 3, 2, 3]
+discard plt.title! "My Plot"
+discard plt.xlabel! "X"
+# plt.show!()
+
+res = j2.Template("Hello {{ name }}!").render(name:="World")
+assert res == "Hello World!"
+
+arr = np.array([1, 2, 3])
+assert arr.sum() == 6

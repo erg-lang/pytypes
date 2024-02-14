@@ -1,0 +1,17 @@
+.name = "pytypes"
+.version = "0.0.1"
+.type = "decl"
+.authors = ["Erg team"]
+.license = "MIT"
+.description = "Type definition for major python packages."
+
+.dependencies = {=}
+.test_dependencies = {
+    erg_compiler = { name = "erg_compiler" };
+    jinja2 = { name = "jinja2" };
+    numpy = { name = "numpy" };
+    torch = { name = "torch" };
+    torchvision = { name = "torchvision" };
+    tqdm = { name = "tqdm" };
+    matplotlib = { name = "matplotlib" };
+}

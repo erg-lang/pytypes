@@ -1,0 +1,9 @@
+private = "this is a private variable"
+.public = "this is a public variable"
+
+.C = Class {.x = Int}
+.C.
+    x = 1
+.C|<: Eq|.
+    `==` self, other =
+        self.x == other.x

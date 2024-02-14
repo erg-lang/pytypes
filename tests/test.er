@@ -1,0 +1,20 @@
+exception = import "exception"
+erg_compiler = pyimport "erg_compiler"
+
+.test_dependent_refinemt_err!() =
+    num_errs = exception.try! do! erg_compiler.compile_file("tests/compile_err/dependent_refinement.er"), err =>
+        nat str(err).split(" ")[0]
+    assert num_errs in Nat
+    assert num_errs == 3
+
+.test_dependent_refinemt!() =
+    discard erg_compiler.compile_file("tests/compile_ok/dependent_refinement.er")
+
+.test_external!() =
+    discard erg_compiler.__import__("tests/exec_ok/external")
+
+.test_pytorch!() =
+    discard erg_compiler.compile_file("tests/exec_ok/pytorch.er")
+
+.test_use_compiler!() =
+    discard erg_compiler.__import__("tests/exec_ok/use_compiler")

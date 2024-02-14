@@ -1,0 +1,52 @@
+.version = "1"
+.packages = [
+    {
+        .name = "certified/erg_compiler";
+        .as_name = "erg_compiler";
+        .version = "0.6.31";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/jinja2";
+        .as_name = "jinja2";
+        .version = "3.1.3";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/numpy";
+        .as_name = "numpy";
+        .version = "1.26.0";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/torch";
+        .as_name = "torch";
+        .version = "2.3.0";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/torchvision";
+        .as_name = "torchvision";
+        .version = "0.18.0";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/tqdm";
+        .as_name = "tqdm";
+        .version = "4.66.1";
+        .type = "decl";
+        .used_in = "run";
+    },
+    {
+        .name = "certified/matplotlib";
+        .as_name = "matplotlib";
+        .version = "3.8.2";
+        .type = "decl";
+        .used_in = "run";
+    },
+]
