@@ -1,1 +1,2 @@
-.Dataset: ClassType
+.Dataset: (T: Type, S: [Nat; _]) -> ClassType
+.Dataset(T, _) <: Output T

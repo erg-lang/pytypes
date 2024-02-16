@@ -2,9 +2,10 @@ dataset = pyimport "torch/utils/data/dataset"
 {Tensor!;} = pyimport "torch"
 
 .VisionDataset: ClassType
-.VisionDataset <: dataset.Dataset
+.VisionDataset <: dataset.Dataset(Float, _)
 .VisionDataset|<: Indexable(Nat, (Tensor!(Float, _), Tensor!(Float, _)))|.
     __getitem__: (index: Nat) -> (Tensor!(Float, _), Tensor!(Float, _))
+.VisionDataset <: Iterable((Tensor!(Float, _), Tensor!(Float, _)))
 .VisionDataset.
     __call__: (
         root: Str,

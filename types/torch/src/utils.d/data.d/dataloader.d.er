@@ -2,11 +2,12 @@ torch = pyimport "torch"
 dataset = pyimport "./dataset"
 {Sampler;} = pyimport "./sampler"
 
-.DataLoader: ClassType
-.DataLoader <: Iterable((torch.Tensor!(_, _), torch.Tensor!(_, _)))
-.DataLoader.
+.DataLoader: (T: Type, S: [Nat; _]) -> ClassType
+.DataLoader(T, _) <: Output T
+.DataLoader(T, S) <: Iterable((torch.Tensor!(T, S), torch.Tensor!(T, S)))
+.DataLoader(T, S).
     __call__: (
-        dataset: dataset.Dataset,
+        dataset: dataset.Dataset(T, S),
         batch_size := Nat,
         shuffle := Bool,
         sampler := Sampler,
@@ -22,4 +23,4 @@ dataset = pyimport "./dataset"
         prefetch_factor := Nat,
         persistent_workers := Bool,
         pin_memory_device := Str,
-    ) -> .DataLoader
+    ) -> .DataLoader(T, S)
