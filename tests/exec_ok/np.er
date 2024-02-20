@@ -1,0 +1,5 @@
+np = pyimport "numpy"
+
+_ = np.array [1, 2, 3]
+_ = np.array [[1, 2, 3]]
+_ = np.array [[1, 2, 3], [4, 5, 6]]

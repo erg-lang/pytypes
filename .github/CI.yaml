@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - uses: erg-lang/setup-erg@v3
+      - name: Install erg_compiler module
+        run: |
+          pip install maturin
+          git clone https://github.com/erg-lang/erg
+          git checkout stable
+          cd erg/crates/erg_compiler
+          maturin build --release --features pylib_compiler
+          cd ../../
+          pip install $(ls target/wheels/*.whl)
+          cd ../
+      - name: Test
+        run: |
+          erg pack test

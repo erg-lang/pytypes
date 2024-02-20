@@ -26,5 +26,8 @@ deps = [
 .test_pytorch!() =
     discard erg_compiler.compile_file_with_dependencies("tests/exec_ok/pytorch.er", deps)
 
+.test_np!() =
+    discard erg_compiler.compile_file_with_dependencies("tests/exec_ok/np.er", deps)
+
 .test_use_compiler!() =
     discard erg_compiler.exec_file_with_dependencies("tests/exec_ok/use_compiler.er", deps)
