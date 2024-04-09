@@ -57,7 +57,7 @@
     ) -> .NDArray(T, S)
     sum: |T <: Num|(self: .NDArray(T, _),) -> T
     take: (|T|(self: .NDArray(T, _), indice: Nat) -> T) \
-        and (|T|(self: .NDArray(T, _), indices: .NDArray(Nat) or [Nat; _]) -> .NDArray(T, _))
+        and (|T|(self: .NDArray(T, _), indices: .NDArray(Nat, _) or [Nat; _]) -> .NDArray(T, _))
     tobytes: |T|(self: .NDArray(T, _),) -> Bytes
     tolist: |T|(self: .NDArray(T, _),) -> [T; _]
 
@@ -66,20 +66,20 @@
 
 .abs: |T, S: [Nat; _]|(object: .NDArray(T, S),) -> .NDArray(T, S)
 .add: |T, S: [Nat; _]|(object: .NDArray(T, S), other: .NDArray(T, S)) -> .NDArray(T, S)
-.all: |T <: Num|(object: .NDArray(T),) -> Bool
-.any: |T <: Num|(object: .NDArray(T),) -> Bool
-.arange: |T <: Num|(start: T, stop := T, step := T) -> .NDArray(T)
+.all: |T <: Num|(object: .NDArray(T, _),) -> Bool
+.any: |T <: Num|(object: .NDArray(T, _),) -> Bool
+.arange: |T <: Num|(start: T, stop := T, step := T) -> .NDArray(T, _)
 .array: |T, S: [Nat; _]|(object: HasScalarType(T) and HasShape(S),) -> .NDArray(T, S)
-.linspace: |T <: Num|(start: T, stop: T, num := Nat, endpoint := Bool, retstep := Bool, dtype := Type, axis := Nat) -> .NDArray(T)
-.max: |T <: Num|(object: .NDArray(T),) -> T
-.mean: |T <: Num|(object: .NDArray(T),) -> T
-.min: |T <: Num|(object: .NDArray(T),) -> T
-.ones: |T|(shape: Nat or [Nat; _], dtype := Type) -> .NDArray(T)
-.reshapce: |T|(object: .NDArray(T), shape: [Nat; _]) -> .NDArray(T)
-.std: |T <: Num|(object: .NDArray(T),) -> T
-.sum: |T|(object: .NDArray(T),) -> T
-.sqrt: |T|(object: .NDArray(T),) -> .NDArray(T)
-.transpose: |T|(object: .NDArray(T), axes := [Nat; _]) -> .NDArray(T)
+.linspace: |T <: Num|(start: T, stop: T, num := Nat, endpoint := Bool, retstep := Bool, dtype := Type, axis := Nat) -> .NDArray(T, _)
+.max: |T <: Num|(object: .NDArray(T, _),) -> T
+.mean: |T <: Num|(object: .NDArray(T, _),) -> T
+.min: |T <: Num|(object: .NDArray(T, _),) -> T
+.ones: |T|(shape: Nat or [Nat; _], dtype := Type) -> .NDArray(T, _)
+.reshapce: |T|(object: .NDArray(T, _), shape: [Nat; _]) -> .NDArray(T, _)
+.std: |T <: Num|(object: .NDArray(T, _),) -> T
+.sum: |T|(object: .NDArray(T, _),) -> T
+.sqrt: |T|(object: .NDArray(T, _),) -> .NDArray(T, _)
+.transpose: |T|(object: .NDArray(T, _), axes := [Nat; _]) -> .NDArray(T, _)
 .zeros: (|N: Nat|(shape: {N}, dtype := Type) -> .NDArray(Nat, [N])) \
     and (|S: [Nat; _]|(shape: {S}, dtype := Type) -> .NDArray(Nat, S))
 .empty: (|N: Nat|(shape: {N}, dtype := Type) -> .NDArray(Nat, [N])) \
