@@ -26,6 +26,7 @@ jobs:
           pip install maturin
           git clone https://github.com/erg-lang/erg
           cd erg
+          erg bump_version.er -- patch
           cd crates/erg_compiler
           maturin build --release --features pylib_compiler
           cd ../../
