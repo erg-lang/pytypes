@@ -70,7 +70,7 @@ np = pyimport "numpy"
         copy := Bool,
     ) -> .Tensor!(T, S))
     size: (|T, S: [Nat; _]|(self: .Tensor!(T, S), dim: Nat) -> Nat) \
-        and (|T, S: [Nat; _]|(self: .Tensor!(T, S)) -> .Size)
+        and (|T, S: [Nat; _]|(self: .Tensor!(T, S)) -> .Size(S))
     sum: |T, S: [Nat; _]|(self: .Tensor!(T, S)) -> .Tensor!(T, [])
     squeeze: (|T, S: [Nat; _]|(self: .Tensor!(T, S)) -> .Tensor!(T, S.remove_all(1))) \
         and (|T|(self: .Tensor!(T, _)) -> .Tensor!(T, _))
